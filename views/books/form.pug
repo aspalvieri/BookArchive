@@ -1,0 +1,23 @@
+form(action=(book ? "/update" : "/"), method="POST")
+    if (book)
+        input(type="hidden", name="id", value=book.id)
+
+    .form-group
+        label Title
+        input.form-control(name="book[title]", required, value=(book ? book.title : null))
+    
+    .form-group
+        label Author
+        input.form-control(name="book[author]", required, value=(book ? book.author : null))
+
+    .form-group
+        label Publisher
+        input.form-control(name="book[publisher]", required, value=(book ? book.publisher : null))
+
+    .form-group
+        label Description
+        textarea.form-control(name="book[description]")
+            = book ? book.description : null
+
+    .form-group
+        button.btn.btn-dark(type="submit") Submit
