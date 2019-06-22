@@ -16,7 +16,7 @@ form(action=(book ? "/update" : "/"), method="POST")
 
     .form-group
         label Description
-        textarea.form-control(name="book[description]")
+        textarea.form-control(name="book[description]", required)
             = book ? book.description : null
 
     .form-group
